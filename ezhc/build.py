@@ -162,9 +162,9 @@ def series_drilldown(df,
 
                 data = []
 
-                idx = dfc.index.remove_unused_levels()
+                idx = dfc.index
                 if isinstance(idx, pd.MultiIndex):
-
+                    idx = idx.remove_unused_levels()
                     for k, idx0 in enumerate(idx.levels[0]):
                         df_sub = dfc.xs(idx0)
                         total = df_sub.sum().iloc[0]
