@@ -162,7 +162,7 @@ def series_drilldown(df,
 
                 data = []
 
-                idx = dfc.index
+                idx = dfc.index.remove_unused_levels()
                 if isinstance(idx, pd.MultiIndex):
 
                     for k, idx0 in enumerate(idx.levels[0]):
