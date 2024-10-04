@@ -52,7 +52,7 @@ def html(
     """
 
     def json_dumps(obj):
-        return pd.io.json.dumps(obj)
+        return pd.io.json.ujson_dumps(obj)
 
     chart_id = str(uuid.uuid4()).replace('-', '_')
 
